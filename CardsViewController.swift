@@ -20,8 +20,8 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     let frontCardTopMargin : CGFloat = 0.0
     let backCardTopMargin : CGFloat = 10.0
     
-    var frontCard : SwipeView?
-    var backCard : SwipeView?
+    var frontCard : Card?
+    var backCard : Card?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,11 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
         
         cardStackView.backgroundColor = UIColor.clearColor()
         
-        backCard = SwipeView(frame: createCardFrame(backCardTopMargin))
-        backCard!.delegate = self
-        cardStackView.addSubview(backCard!)
+        backCard = createCard(backCardTopMargin)
+        cardStackView.addSubview(backCard!.swipeView)
         
-        frontCard = SwipeView(frame: createCardFrame(frontCardTopMargin))
-        frontCard!.delegate = self
-        cardStackView.addSubview(frontCard!)
+        frontCard = createCard(frontCardTopMargin)
+        cardStackView.addSubview(frontCard!.swipeView)
         
         
     }
@@ -64,13 +62,13 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
     func swipedLeft() {
         println("Left")
         if let frontCard = frontCard {
-            frontCard.removeFromSuperview()
+            frontCard.swipeView.removeFromSuperview()
         }
     }
     func swipedRight() {
         println("Right")
         if let frontCard = frontCard {
-            frontCard.removeFromSuperview()
+            frontCard.swipeView.removeFromSuperview()
         }
         
     }
