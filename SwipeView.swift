@@ -9,12 +9,36 @@
 import Foundation
 import UIKit
 
+protocol SwipeViewDelegate : class {
+    func swipedRight()
+    func swipedLeft()
+}
+
 class SwipeView: UIView {
     
+    
+    var innerView : UIView? {
+        didSet {
+            if let view = innerView {
+                self.addSubview(view)
+                view.frame = CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: self.frame.height)
+                
+            }
+        }
+    }
     private var originalPoint : CGPoint?
+
+    //Delegate
     
-    private let card: CardView = CardView()
+    weak var delegate: SwipeViewDelegate?
     
+    
+    
+    enum Direction {
+        case None
+        case Left
+        case Right
+    }
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
@@ -34,19 +58,9 @@ class SwipeView: UIView {
     private func initialize(){
     
         self.backgroundColor = UIColor.clearColor()
-        self.addSubview(card)
-//        self.card.setTranslatesAutoresizingMaskIntoConstraints(false)
-        
         
         //Adding gestureRecognizer
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "dragged:"))
-        
-        card.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
-        
-        
-        
-//        setConstraints()
-        
     
     }
     
@@ -65,7 +79,13 @@ class SwipeView: UIView {
             
             self.center = CGPointMake(originalPoint!.x + distance.x, originalPoint!.y + distance.y)
         case UIGestureRecognizerState.Ended:
-            resetSwpieViewPositionAndTransformation()
+            
+            if (abs(distance.x) < self.frame.width/4){
+                resetSwpieViewPositionAndTransformation()
+            }
+            else {
+                self.swipeDirection(distance.x > 0 ? .Right : .Left)
+            }
         default:
             println("Default for panGestureRecognizerState")
             break           
@@ -83,15 +103,28 @@ class SwipeView: UIView {
         })
     }
     
-//    private func setConstraints() {
-//    
-//        self.addConstraint(NSLayoutConstraint(item: card, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0.0))
-//        self.addConstraint(NSLayoutConstraint(item: card, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0.0))
-//        self.addConstraint(NSLayoutConstraint(item: card, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 0.0))
-//        self.addConstraint(NSLayoutConstraint(item: card, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0.0))
-//        
-//        
-//    }
-    
+    func swipeDirection (direction: Direction) {
+        
+        if direction == .None {
+            return
+        }
+        
+        var parentWidth = superview!.frame.size.width
+        
+        if direction == .Left {
+            parentWidth *= -1
+        }
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.center.x = self.frame.origin.x + parentWidth
+            }, completion: {
+                success in
+                if let delegate = self.delegate {
+                    direction == .Right ? delegate.swipedRight() : delegate.swipedLeft()
+
+                }
+        })
+        
+    }
     
 }
