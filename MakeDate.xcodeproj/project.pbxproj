@@ -14,6 +14,9 @@
 		C955E88C1B21A4430075B95E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C955E88B1B21A4430075B95E /* Images.xcassets */; };
 		C955E88F1B21A4430075B95E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C955E88D1B21A4430075B95E /* LaunchScreen.xib */; };
 		C955E89B1B21A4430075B95E /* MakeDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955E89A1B21A4430075B95E /* MakeDateTests.swift */; };
+		C955E8A61B21A4FA0075B95E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955E8A51B21A4FA0075B95E /* CardView.swift */; };
+		C955E8A81B21B1500075B95E /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955E8A71B21B1500075B95E /* SwipeView.swift */; };
+		C955E8AB1B21B7580075B95E /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955E8AA1B21B7580075B95E /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +34,16 @@
 		C955E8801B21A4420075B95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C955E8811B21A4420075B95E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C955E8841B21A4420075B95E /* MakeDate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakeDate.xcdatamodel; sourceTree = "<group>"; };
-		C955E8861B21A4430075B95E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C955E8861B21A4430075B95E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = MakeDate/ViewController.swift; sourceTree = "<group>"; };
 		C955E8891B21A4430075B95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C955E88B1B21A4430075B95E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C955E88E1B21A4430075B95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C955E8941B21A4430075B95E /* MakeDateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeDateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C955E8991B21A4430075B95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C955E89A1B21A4430075B95E /* MakeDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDateTests.swift; sourceTree = "<group>"; };
+		C955E8A51B21A4FA0075B95E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C955E8A71B21B1500075B95E /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		C955E8AA1B21B7580075B95E /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +85,9 @@
 		C955E87E1B21A4420075B95E /* MakeDate */ = {
 			isa = PBXGroup;
 			children = (
+				C955E8A91B21B7340075B95E /* ViewControllers */,
+				C955E8A41B21A4B90075B95E /* Views */,
 				C955E8811B21A4420075B95E /* AppDelegate.swift */,
-				C955E8861B21A4430075B95E /* ViewController.swift */,
 				C955E8881B21A4430075B95E /* Main.storyboard */,
 				C955E88B1B21A4430075B95E /* Images.xcassets */,
 				C955E88D1B21A4430075B95E /* LaunchScreen.xib */,
@@ -113,6 +120,26 @@
 				C955E8991B21A4430075B95E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C955E8A41B21A4B90075B95E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C955E8A51B21A4FA0075B95E /* CardView.swift */,
+				C955E8A71B21B1500075B95E /* SwipeView.swift */,
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C955E8A91B21B7340075B95E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C955E8861B21A4430075B95E /* ViewController.swift */,
+				C955E8AA1B21B7580075B95E /* CardsViewController.swift */,
+			);
+			name = ViewControllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +191,7 @@
 				TargetAttributes = {
 					C955E87B1B21A4420075B95E = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = B5B8XBX9AB;
 					};
 					C955E8931B21A4430075B95E = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -217,6 +245,9 @@
 			files = (
 				C955E8871B21A4430075B95E /* ViewController.swift in Sources */,
 				C955E8821B21A4420075B95E /* AppDelegate.swift in Sources */,
+				C955E8AB1B21B7580075B95E /* CardsViewController.swift in Sources */,
+				C955E8A61B21A4FA0075B95E /* CardView.swift in Sources */,
+				C955E8A81B21B1500075B95E /* SwipeView.swift in Sources */,
 				C955E8851B21A4430075B95E /* MakeDate.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MakeDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MakeDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
