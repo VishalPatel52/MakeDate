@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C952277E1B264BF40074E042 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952277D1B264BF40074E042 /* LoginViewController.swift */; };
 		C955E8821B21A4420075B95E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955E8811B21A4420075B95E /* AppDelegate.swift */; };
 		C955E8851B21A4430075B95E /* MakeDate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C955E8831B21A4420075B95E /* MakeDate.xcdatamodeld */; };
 		C955E8871B21A4430075B95E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955E8861B21A4430075B95E /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C952277D1B264BF40074E042 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C955E87C1B21A4420075B95E /* MakeDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C955E8801B21A4420075B95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C955E8811B21A4420075B95E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C955E8861B21A4430075B95E /* ViewController.swift */,
+				C952277D1B264BF40074E042 /* LoginViewController.swift */,
 				C955E8AA1B21B7580075B95E /* CardsViewController.swift */,
 			);
 			name = ViewControllers;
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C952277E1B264BF40074E042 /* LoginViewController.swift in Sources */,
 				C955E8871B21A4430075B95E /* ViewController.swift in Sources */,
 				C955E8821B21A4420075B95E /* AppDelegate.swift in Sources */,
 				C955E8AB1B21B7580075B95E /* CardsViewController.swift in Sources */,
