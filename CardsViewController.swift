@@ -29,12 +29,12 @@ class CardsViewController: UIViewController, SwipeViewDelegate {
 
         // Do any additional setup after loading the view.
         
-        //MARK:- Testing Parse
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Object has been saved.")
-        }
+//        //MARK:- Testing Parse
+//        let testObject = PFObject(className: "TestObject")
+//        testObject["foo"] = "bar"
+//        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+//            println("Object has been saved.")
+//        }
         
         cardStackView.backgroundColor = UIColor.clearColor()
         
